@@ -1,0 +1,70 @@
+{
+  "manifest_version": 3,
+  "name": "Balon - LLM-assisted content blocker",
+  "version": "100",
+  "description": "Hide undesired content with a prompt",
+  "icons": {
+    "16": "icon.png",
+    "32": "icon.png",
+    "48": "icon.png",
+    "64": "icon.png",
+    "128": "icon.png"
+  },
+  "action": {
+      "default_title": "Overlay settings",
+      "default_popup": "popup.html",
+      "default_icon": {
+        "16": "icon.png",
+        "32": "icon.png"
+      }
+  },
+  
+ "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  },
+
+  "permissions": ["storage"],
+  
+  "host_permissions": [
+    "http://localhost/*",
+    "https://api.openai.com/*",
+    "https://api.anthropic.com/*",
+    "https://generativelanguage.googleapis.com/*"
+  ],
+  "content_scripts": [
+    {
+    "matches": [
+      "https://old.reddit.com/*",
+      "https://www.reddit.com/*",
+      "https://reddit.com/*",
+      "https://www.youtube.com/*",
+      "https://youtube.com/*",
+      "https://x.com/*",
+      "https://news.ycombinator.com/*"
+    ],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  
+   "web_accessible_resources": [
+    {
+      "resources": ["rules.json"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  
+  "background": { "scripts": ["background.js"] },
+
+  "browser_specific_settings": {
+  "gecko": {
+    "id": "balon@yzn",
+    "data_collection_permissions":{
+      "required": ["none"]
+    }
+  }
+}
+
+}
+

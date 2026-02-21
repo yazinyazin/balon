@@ -1,0 +1,13 @@
+{
+  "default": [],
+  "sites": {
+    "old.reddit.com": [".usertext-body","p.title"],
+    "www.reddit.com": [ "[slot=\"comment\"]","p.title"],
+    "reddit.com": [ "[slot=\"comment\"]"],
+    "www.youtube.com": [ "#comment-container"],
+    "youtube.com": [ "#comment-container"],
+    "x.com": ["article"],
+    "news.ycombinator.com": [".commtext",".titleline"]
+
+  }
+}

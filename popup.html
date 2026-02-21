@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      body { font-family: sans-serif; margin: 12px; width: 460px; }
+      label { font-weight: 300;text-align: right; }
+      input[type="text"] { width: 100%; box-sizing: border-box; }
+      textarea { width: 100%; box-sizing: border-box; }
+
+      .row {display: grid;grid-template-columns: max-content 1fr; align-items: center;gap: 8px;margin-bottom: 8px; }
+      .row input[type="checkbox"] { transform: translateY(1px); }
+      
+      small { color: #666; display: block; margin-top: 6px; }
+      button { margin-top: 10px; width: 100%; }
+    </style>
+  </head>
+  <body>
+
+
+    <div class="row" style="margin-top:10px;">
+      <label for="enabled" style="margin:0;">Cover before LLM response</label>
+      <input id="enabled" type="checkbox" />
+    </div>
+   
+    <div class="row" style="margin-top:10px;">
+
+      <label for="endpointUrl" style="margin:0;">LLM provider</label>
+        <select name="endpointUrl" id="endpointUrl">
+
+          <option value="http://localhost">You</option>
+          <option value="https://api.anthropic.com/v1/messages">Anthropic</option>
+          <option value="https://generativelanguage.googleapis.com/v1beta/models">Google</option>
+          <option value="https://api.openai.com/v1/responses">Open AI</option>
+        </select>
+    </div>
+
+     <div class="row group" style="margin-top:10px;" data-mode="local">
+      <label for="portNumber">Port number</label>
+      <input id="portNumber" type="text" placeholder="8089" />
+    </div>
+
+    <div class="row group" style="margin-top:10px;" data-mode="endpoint">
+      <label for="modelName">Model name</label>
+      <input id="modelName" type="text" placeholder="Chat Claude 5000" />
+    </div>
+
+    <div class="row group" style="margin-top:10px;" data-mode="endpoint">
+      <label for="secretToken">API key</label>
+      <input id="secretToken" type="text" placeholder="Your key" />
+    </div>
+
+    <div class="row" style="margin-top:10px;">
+      <label for="proompt">Prompt</label>
+      <textarea rows="5" id="proompt" type="text"></textarea>
+    </div>
+
+   <button id="openOptions">Manage Domains</button>
+
+
+    <button id="save">Save</button>
+    <small id="status"></small>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
+
