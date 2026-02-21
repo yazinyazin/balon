@@ -25,10 +25,10 @@ Here's how it works :
 
 - After you entered the necessary information, hit save on the popup and browse one of the following :
 
-    reddit
-    youtube
-    x
-    hackernews
+        reddit
+        youtube
+        x
+        hackernews
 
 
 - If your prompt returns any other word than ok, a gray box will appear on that comment and a label will show the returned word. So in our example, posts about sour fruits will have a gray box with the label pomegranate on them.
