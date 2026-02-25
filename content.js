@@ -82,6 +82,12 @@ async function isAllowedByEndpoint(target) {
           text
     });
 
+    if(!res.ok){
+      console.log(res.error);
+
+      return "Connection error";
+    }
+
 
     return res.body;
   })().catch(() => "Connection error"); // on error: cover
@@ -107,6 +113,19 @@ function setOverlayLabel(target, labelText) {
   }
 }
 
+const colors = ["#825050","#827950","#638250","#507482","#555082","#7f5082"];
+colorIndex = 0;
+
+function getBackgroundColor(){
+  let chosenColor = colors[colorIndex];
+
+  if(colorIndex<colors.length-1) colorIndex++;
+  else colorIndex = 0;
+
+  return chosenColor;
+
+}
+
 function ensureOverlay(target,labelText) {
   let overlay = overlayByTarget.get(target);
 
@@ -114,7 +133,7 @@ function ensureOverlay(target,labelText) {
     overlay = document.createElement("div");
 
     overlay.style.position = "absolute";
-    overlay.style.background = "gray";
+    overlay.style.background = getBackgroundColor();
     overlay.style.zIndex = "2147483647";
     overlay.style.pointerEvents = "auto";
     overlay.style.userSelect = "none";

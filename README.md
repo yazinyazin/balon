@@ -31,9 +31,8 @@ Here's how it works :
         hackernews
 
 
-- If your prompt returns any other word than ok, a gray box will appear on that comment and a label will show the returned word. So in our example, posts about sour fruits will have a gray box with the label pomegranate on them.
+- If your prompt returns any other word than ok, a box will appear on that comment and a label will show the returned word. So in our example, posts about sour fruits will have a box with the label pomegranate on them.
 
-- You can dismiss the gray box by clicking on it and read the content underneath.
+- You can dismiss the box by clicking on it and read the content underneath.
 
-- By default, comments that are not checked will have a gray box with the label Checking... on them. This behavior can be disabled from the pop-up menu.
-
+- By default, comments that are not checked will have a box with the label Checking... on them. This behavior can be disabled from the pop-up menu.
